@@ -21,7 +21,7 @@ class AdminBookingController extends Controller
     public function index()
     {
         $page['title'] = 'Booking';
-        return view("booking::index",compact('page'));
+        return view("Booking::index",compact('page'));
 
         //
     }
@@ -101,7 +101,7 @@ class AdminBookingController extends Controller
     {
         $page['title'] = 'Booking | Create';
         $parkings = Parking::all();
-        return view("booking::add",compact('page', 'parkings'));
+        return view("Booking::add",compact('page', 'parkings'));
         //
     }
 
@@ -141,7 +141,7 @@ class AdminBookingController extends Controller
         $booking = Booking::where('id', $id)->with('booking_infos.staff')->first();
         $parkings = Parking::all();
         $page['title'] = 'Booking | Update';
-        return view("booking::edit",compact('page','booking', 'parkings'));
+        return view("Booking::edit",compact('page','booking', 'parkings'));
 
         //
     }

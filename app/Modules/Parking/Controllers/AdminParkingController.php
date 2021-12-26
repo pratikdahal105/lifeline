@@ -20,7 +20,7 @@ class AdminParkingController extends Controller
     public function index()
     {
         $page['title'] = 'Parking';
-        return view("parking::index",compact('page'));
+        return view("Parking::index",compact('page'));
 
         //
     }
@@ -99,7 +99,7 @@ class AdminParkingController extends Controller
     public function create()
     {
         $page['title'] = 'Parking | Create';
-        return view("parking::add",compact('page'));
+        return view("Parking::add",compact('page'));
         //
     }
 
@@ -138,7 +138,7 @@ class AdminParkingController extends Controller
     {
         $parking = Parking::findOrFail($id);
         $page['title'] = 'Parking | Update';
-        return view("parking::edit",compact('page','parking'));
+        return view("Parking::edit",compact('page','parking'));
 
         //
     }

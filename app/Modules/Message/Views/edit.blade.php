@@ -22,7 +22,7 @@
                             <div class="form-group">
                                     <label for="full_name">Full_name</label><input type="text" value = "{{$message->full_name}}"  name="full_name" id="full_name" class="form-control" ></div><div class="form-group">
                                     <label for="email">Email</label><input type="text" value = "{{$message->email}}"  name="email" id="email" class="form-control" ></div><div class="form-group">
-                                    <label for="message">Message</label><input type="text" value = "{{$message->message}}"  name="message" id="message" class="form-control" ></div><div class="form-group">
+                                <label for="message">Message</label><textarea type="text"  name="message" id="message" class="form-control" >{{$message->message}}</textarea></div><div class="form-group">
                                     <label for="status">Status</label><input type="text" value = "{{$message->status}}"  name="status" id="status" class="form-control" ></div><div class="form-group">
 {{--                                    <label for="deleted_at">Deleted_at</label><input type="text" value = "{{$message->deleted_at}}"  name="deleted_at" id="deleted_at" class="form-control" ></div><div class="form-group">--}}
 {{--                                    <label for="created_at">Created_at</label><input type="text" value = "{{$message->created_at}}"  name="created_at" id="created_at" class="form-control" ></div><div class="form-group">--}}

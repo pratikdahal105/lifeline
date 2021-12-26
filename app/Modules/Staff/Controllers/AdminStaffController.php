@@ -20,7 +20,7 @@ class AdminStaffController extends Controller
     public function index()
     {
         $page['title'] = 'Staff';
-        return view("staff::index",compact('page'));
+        return view("Staff::index",compact('page'));
 
         //
     }
@@ -99,7 +99,7 @@ class AdminStaffController extends Controller
     public function create()
     {
         $page['title'] = 'Staff | Create';
-        return view("staff::add",compact('page'));
+        return view("Staff::add",compact('page'));
         //
     }
 
@@ -138,7 +138,7 @@ class AdminStaffController extends Controller
     {
         $staff = Staff::findOrFail($id);
         $page['title'] = 'Staff | Update';
-        return view("staff::edit",compact('page','staff'));
+        return view("Staff::edit",compact('page','staff'));
 
         //
     }

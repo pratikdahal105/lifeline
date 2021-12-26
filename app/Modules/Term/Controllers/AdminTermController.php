@@ -20,7 +20,7 @@ class AdminTermController extends Controller
     public function index()
     {
         $page['title'] = 'Term';
-        return view("term::index",compact('page'));
+        return view("Term::index",compact('page'));
 
         //
     }
@@ -99,7 +99,7 @@ class AdminTermController extends Controller
     public function create()
     {
         $page['title'] = 'Term | Create';
-        return view("term::add",compact('page'));
+        return view("Term::add",compact('page'));
         //
     }
 
@@ -138,7 +138,7 @@ class AdminTermController extends Controller
     {
         $term = Term::findOrFail($id);
         $page['title'] = 'Term | Update';
-        return view("term::edit",compact('page','term'));
+        return view("Term::edit",compact('page','term'));
 
         //
     }
@@ -152,7 +152,7 @@ class AdminTermController extends Controller
      */
     public function update(Request $request)
     {
-        $data = $request->except('_token', '_method');
+        $data = $request->except('_token', '_method', 'files');
         $success = Term::where('id', $request->id)->update($data);
         return redirect()->route('admin.terms');
 

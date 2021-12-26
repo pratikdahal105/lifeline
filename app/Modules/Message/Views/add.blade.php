@@ -22,7 +22,7 @@
                             <div class="form-group">
                                     <label for="full_name">Full_name</label><input type="text" name="full_name" id="full_name" class="form-control" ></div><div class="form-group">
                                     <label for="email">Email</label><input type="text" name="email" id="email" class="form-control" ></div><div class="form-group">
-                                    <label for="message">Message</label><input type="text" name="message" id="message" class="form-control" ></div><div class="form-group">
+                                <label for="message">Message</label><textarea type="text" name="message" id="message" class="form-control" ></textarea></div><div class="form-group">
                                     <label for="status">Status</label><input type="text" name="status" id="status" class="form-control" ></div><div class="form-group">
 {{--                                    <label for="deleted_at">Deleted_at</label><input type="text" name="deleted_at" id="deleted_at" class="form-control" ></div><div class="form-group">--}}
 {{--                                    <label for="created_at">Created_at</label><input type="text" name="created_at" id="created_at" class="form-control" ></div><div class="form-group">--}}

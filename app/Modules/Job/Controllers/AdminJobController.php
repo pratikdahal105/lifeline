@@ -20,7 +20,7 @@ class AdminJobController extends Controller
     public function index()
     {
         $page['title'] = 'Job';
-        return view("job::index",compact('page'));
+        return view("Job::index",compact('page'));
 
         //
     }
@@ -99,7 +99,7 @@ class AdminJobController extends Controller
     public function create()
     {
         $page['title'] = 'Job | Create';
-        return view("job::add",compact('page'));
+        return view("Job::add",compact('page'));
         //
     }
 
@@ -138,7 +138,7 @@ class AdminJobController extends Controller
     {
         $job = Job::findOrFail($id);
         $page['title'] = 'Job | Update';
-        return view("job::edit",compact('page','job'));
+        return view("Job::edit",compact('page','job'));
 
         //
     }
@@ -152,7 +152,7 @@ class AdminJobController extends Controller
      */
     public function update(Request $request)
     {
-        $data = $request->except('_token', '_method');
+        $data = $request->except('_token', '_method', 'files');
         $success = Job::where('id', $request->id)->update($data);
         return redirect()->route('admin.jobs');
 

@@ -20,7 +20,7 @@ class AdminJob_applicationController extends Controller
     public function index()
     {
         $page['title'] = 'Job_application';
-        return view("job_application::index",compact('page'));
+        return view("Job_application::index",compact('page'));
 
         //
     }
@@ -99,7 +99,7 @@ class AdminJob_applicationController extends Controller
     public function create()
     {
         $page['title'] = 'Job_application | Create';
-        return view("job_application::add",compact('page'));
+        return view("Job_application::add",compact('page'));
         //
     }
 
@@ -138,7 +138,7 @@ class AdminJob_applicationController extends Controller
     {
         $job_application = Job_application::findOrFail($id);
         $page['title'] = 'Job_application | Update';
-        return view("job_application::edit",compact('page','job_application'));
+        return view("Job_application::edit",compact('page','job_application'));
 
         //
     }

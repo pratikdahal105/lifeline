@@ -20,7 +20,7 @@ class AdminBooking_infoController extends Controller
     public function index()
     {
         $page['title'] = 'Booking_info';
-        return view("booking_info::index",compact('page'));
+        return view("Booking_info::index",compact('page'));
 
         //
     }
@@ -99,7 +99,7 @@ class AdminBooking_infoController extends Controller
     public function create()
     {
         $page['title'] = 'Booking_info | Create';
-        return view("booking_info::add",compact('page'));
+        return view("Booking_info::add",compact('page'));
         //
     }
 
@@ -138,7 +138,7 @@ class AdminBooking_infoController extends Controller
     {
         $booking_info = Booking_info::findOrFail($id);
         $page['title'] = 'Booking_info | Update';
-        return view("booking_info::edit",compact('page','booking_info'));
+        return view("Booking_info::edit",compact('page','booking_info'));
 
         //
     }

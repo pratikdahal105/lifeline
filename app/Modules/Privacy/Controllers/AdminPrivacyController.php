@@ -20,7 +20,7 @@ class AdminPrivacyController extends Controller
     public function index()
     {
         $page['title'] = 'Privacy';
-        return view("privacy::index",compact('page'));
+        return view("Privacy::index",compact('page'));
 
         //
     }
@@ -99,7 +99,7 @@ class AdminPrivacyController extends Controller
     public function create()
     {
         $page['title'] = 'Privacy | Create';
-        return view("privacy::add",compact('page'));
+        return view("Privacy::add",compact('page'));
         //
     }
 
@@ -138,7 +138,7 @@ class AdminPrivacyController extends Controller
     {
         $privacy = Privacy::findOrFail($id);
         $page['title'] = 'Privacy | Update';
-        return view("privacy::edit",compact('page','privacy'));
+        return view("Privacy::edit",compact('page','privacy'));
 
         //
     }
@@ -152,7 +152,7 @@ class AdminPrivacyController extends Controller
      */
     public function update(Request $request)
     {
-        $data = $request->except('_token', '_method');
+        $data = $request->except('_token', '_method', 'files');
         $success = Privacy::where('id', $request->id)->update($data);
         return redirect()->route('admin.privacies');
 

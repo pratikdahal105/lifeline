@@ -138,7 +138,7 @@ class AdminAboutController extends Controller
     {
         $about = About::findOrFail($id);
         $page['title'] = 'About | Update';
-        return view("about::edit",compact('page','about'));
+        return view("About::edit",compact('page','about'));
 
         //
     }
@@ -152,7 +152,7 @@ class AdminAboutController extends Controller
      */
     public function update(Request $request)
     {
-        $data = $request->except('_token', '_method');
+        $data = $request->except('_token', '_method', 'files');
         $success = About::where('id', $request->id)->update($data);
         return redirect()->route('admin.abouts');
 

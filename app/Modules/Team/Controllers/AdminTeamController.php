@@ -20,7 +20,7 @@ class AdminTeamController extends Controller
     public function index()
     {
         $page['title'] = 'Team';
-        return view("team::index",compact('page'));
+        return view("Team::index",compact('page'));
 
         //
     }
@@ -99,7 +99,7 @@ class AdminTeamController extends Controller
     public function create()
     {
         $page['title'] = 'Team | Create';
-        return view("team::add",compact('page'));
+        return view("Team::add",compact('page'));
         //
     }
 
@@ -138,7 +138,7 @@ class AdminTeamController extends Controller
     {
         $team = Team::findOrFail($id);
         $page['title'] = 'Team | Update';
-        return view("team::edit",compact('page','team'));
+        return view("Team::edit",compact('page','team'));
 
         //
     }

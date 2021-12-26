@@ -20,7 +20,7 @@
                     <form role="form" action="{{ route('admin.abouts.store') }}"  method="post">
                         <div class="box-body">
                             <div class="form-group">
-                                    <label for="body">Body</label><input type="text" name="body" id="body" class="form-control" ></div><div class="form-group">
+                                <label for="body">Body</label><textarea type="text" name="body" id="body" class="form-control" ></textarea></div><div class="form-group">
 {{--                                    <label for="deleted_at">Deleted_at</label><input type="text" name="deleted_at" id="deleted_at" class="form-control" ></div><div class="form-group">--}}
 {{--                                    <label for="created_at">Created_at</label><input type="text" name="created_at" id="created_at" class="form-control" ></div><div class="form-group">--}}
 {{--                                    <label for="updated_at">Updated_at</label><input type="text" name="updated_at" id="updated_at" class="form-control" ></div>--}}
@@ -36,4 +36,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $('#body').summernote({
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+            ],
+        });
+    </script>
 @endsection

@@ -22,7 +22,7 @@
                             <div class="form-group">
                                     <label for="position">Position</label><input type="text" value = "{{$job->position}}"  name="position" id="position" class="form-control" ></div><div class="form-group">
                                     <label for="number">Number</label><input type="number" value = "{{$job->number}}"  name="number" id="number" class="form-control" ></div><div class="form-group">
-                                    <label for="requirements">Requirements</label><input type="text" value = "{{$job->requirements}}"  name="requirements" id="requirements" class="form-control" ></div><div class="form-group">
+                                <label for="requirements">Requirements</label><textarea type="text"  name="requirements" id="requirements" class="form-control" >{!! $job->requirements !!}</textarea></div><div class="form-group">
                                     <label for="till">Till</label><input type="date" value = "{{$job->till}}"  name="till" id="till" class="form-control" ></div><div class="form-group">
                                 <label for="status">Status</label><select name="status" id="status" class="form-control" >
                                     @if($job->status == 1)
@@ -47,4 +47,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $('#requirements').summernote({
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+            ],
+        });
+    </script>
 @endsection

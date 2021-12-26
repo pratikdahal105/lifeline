@@ -20,7 +20,7 @@ class AdminMessageController extends Controller
     public function index()
     {
         $page['title'] = 'Message';
-        return view("message::index",compact('page'));
+        return view("Message::index",compact('page'));
 
         //
     }
@@ -99,7 +99,7 @@ class AdminMessageController extends Controller
     public function create()
     {
         $page['title'] = 'Message | Create';
-        return view("message::add",compact('page'));
+        return view("Message::add",compact('page'));
         //
     }
 
@@ -138,7 +138,7 @@ class AdminMessageController extends Controller
     {
         $message = Message::findOrFail($id);
         $page['title'] = 'Message | Update';
-        return view("message::edit",compact('page','message'));
+        return view("Message::edit",compact('page','message'));
 
         //
     }
