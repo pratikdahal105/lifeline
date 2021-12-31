@@ -16,14 +16,14 @@
             </header>
             <div class="panel-body">
                 <div class="table-responsive">
-                    <form role="form" action="{{ route('admin.teams.update') }}"  method="post">
+                    <form role="form" action="{{ route('admin.teams.update') }}" enctype="multipart/form-data" method="post">
                         <div class="box-body">
                             {{method_field('PATCH')}}
                             <div class="form-group">
-                                    <label for="image">Image</label><input type="text" value = "{{$team->image}}"  name="image" id="image" class="form-control" ></div><div class="form-group">
+                                    <label for="image">Image</label><input type="file" accept="image/png, image/gif, image/jpeg" value = "{{$team->image}}"  name="image" id="image" class="form-control" ></div><div class="form-group">
                                     <label for="designation">Designation</label><input type="text" value = "{{$team->designation}}"  name="designation" id="designation" class="form-control" ></div><div class="form-group">
                                     <label for="name">Name</label><input type="text" value = "{{$team->name}}"  name="name" id="name" class="form-control" ></div><div class="form-group">
-                                    <label for="description">Description</label><input type="text" value = "{{$team->description}}"  name="description" id="description" class="form-control" ></div><div class="form-group">
+{{--                                    <label for="description">Description</label><input type="text" value = "{{$team->description}}"  name="description" id="description" class="form-control" ></div><div class="form-group">--}}
                                     <label for="link">Link</label><input type="text" value = "{{$team->link}}"  name="link" id="link" class="form-control" ></div><div class="form-group">
 {{--                                    <label for="deleted_at">Deleted_at</label><input type="text" value = "{{$team->deleted_at}}"  name="deleted_at" id="deleted_at" class="form-control" ></div><div class="form-group">--}}
 {{--                                    <label for="created_at">Created_at</label><input type="text" value = "{{$team->created_at}}"  name="created_at" id="created_at" class="form-control" ></div><div class="form-group">--}}

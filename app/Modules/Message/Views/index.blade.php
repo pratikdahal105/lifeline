@@ -30,8 +30,8 @@
                             <th>SN</th>
 							<th >Full_name</th>
 <th >Email</th>
-<th >Message</th>
-<th >Status</th>
+<th >subject</th>
+{{--<th >Status</th>--}}
 {{--<th >Deleted_at</th>--}}
 {{--<th >Created_at</th>--}}
 {{--<th >Updated_at</th>--}}
@@ -67,15 +67,22 @@
                 { data: function (data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },name: "sn", searchable: false },
-                { data: "full_name",name: "full_name"},{ data: "email",name: "email"},{ data: "message",name: "message"},{ data: "status",name: "status"},
+                { data: "full_name",name: "full_name"},{ data: "email",name: "email"},{ data: "subject",name: "subject"},
+                // { data: "status",name: "status"},
                 // { data: "deleted_at",name: "deleted_at"},{ data: "created_at",name: "created_at"},{ data: "updated_at",name: "updated_at"},
 
                 { data: function(data,b,c,table) {
                 var buttons = '';
 
-                buttons += "<a class='btn btn-sm btn-success btn-outline'  title='Edit' href='"+site_url+"/edit/"+data.id+"'><i class='icon wb-pencil' aria-hidden='true'></i></a>&nbsp;&nbsp";
-
-                buttons += "<a class='btn btn-sm btn-danger btn-outline' onclick='return confirm(\"are you sure you want to delete this data?\")' href='"+site_url+"/delete/"+data.id+"' ><i class='icon wb-trash' aria-hidden='true'></i></a>&nbsp;&nbsp";
+                // buttons += "<a class='btn btn-sm btn-success btn-outline'  title='Edit' href='"+site_url+"/edit/"+data.id+"'><i class='icon wb-pencil' aria-hidden='true'></i></a>&nbsp;&nbsp";
+                buttons += "<a class='btn btn-sm btn-success btn-outline'  title='View' href='"+site_url+"/edit/"+data.id+"'><i class='icon wb-eye' aria-hidden='true'></i></a>&nbsp;&nbsp";
+                if(data['status'] == 1)
+                {
+                    buttons += "<a class='btn btn-sm btn-primary btn-outline'  title='Mark Not Read' href='"+site_url+"/toggle/"+data.id+"'><i class='fa fa-envelope-open' aria-hidden='true'></i></a>&nbsp;&nbsp";
+                }else{
+                    buttons += "<a class='btn btn-sm btn-danger btn-outline'  title='Mark Read' href='"+site_url+"/toggle/"+data.id+"'><i class='fa fa-envelope' aria-hidden='true'></i></a>&nbsp;&nbsp";
+                }
+                // buttons += "<a class='btn btn-sm btn-danger btn-outline' onclick='return confirm(\"are you sure you want to delete this data?\")' href='"+site_url+"/delete/"+data.id+"' ><i class='icon wb-trash' aria-hidden='true'></i></a>&nbsp;&nbsp";
 
                 return buttons;
                 }, name:'action',searchable: false},

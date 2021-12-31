@@ -12,6 +12,8 @@ Route::group(array('prefix'=>'admin/','module'=>'Message','middleware' => ['web'
     Route::get('messages/edit/{id}','AdminMessageController@edit')->name('admin.messages.edit');
     Route::match(['put', 'patch'], 'messages/update','AdminMessageController@update')->name('admin.messages.update');
     Route::get('messages/delete/{id}', 'AdminMessageController@destroy')->name('admin.messages.edit');
+    Route::get('messages/toggle/{id}', 'AdminMessageController@toggle')->name('admin.messages.toggle');
+    Route::post('messages/reply/{id}', 'AdminMessageController@reply')->name('admin.messages.reply');
 });
 
 

@@ -35,25 +35,25 @@
             </svg>
         </div>
     </section>
-    <section class="slice slice-lg">
-        <div class="container">
-            <div class="row row-grid justify-content-between align-items-center">
-                <div class="col-lg-5">
-                    <h3>150 Southeast Pidgeon Meadow<br>Claflin Terrace, 305458</h3>
-                    <p class="lead my-4">
-                        E: <a href="#">support@webpixels.io</a><br>
-                        T: (555) 257-393
-                    </p>
-                    <p>
-                        Want to share any feedback with us, report a technical issue or just ask us a question? Fill free to contact us and we will get back to you shortly.
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830872278!2d-74.1197639579598!3d40.69766374873451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sro!4v1580299124407!5m2!1sen!2sro" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" class="rounded"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="slice slice-lg">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row row-grid justify-content-between align-items-center">--}}
+{{--                <div class="col-lg-5">--}}
+{{--                    <h3>150 Southeast Pidgeon Meadow<br>Claflin Terrace, 305458</h3>--}}
+{{--                    <p class="lead my-4">--}}
+{{--                        E: <a href="#">support@webpixels.io</a><br>--}}
+{{--                        T: (555) 257-393--}}
+{{--                    </p>--}}
+{{--                    <p>--}}
+{{--                        Want to share any feedback with us, report a technical issue or just ask us a question? Fill free to contact us and we will get back to you shortly.--}}
+{{--                    </p>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830872278!2d-74.1197639579598!3d40.69766374873451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sro!4v1580299124407!5m2!1sen!2sro" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" class="rounded"></iframe>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <section class="slice slice-lg" id="sct-form-contact">
         <div class="container position-relative zindex-100">
             <div class="row justify-content-center mb-5">
@@ -76,6 +76,9 @@
 {{--                        <div class="form-group">--}}
 {{--                            <input class="form-control form-control-lg" type="text" placeholder="+40-745-234-567" required>--}}
 {{--                        </div>--}}
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" type="text" name="subject" placeholder="Subject" required>
+                        </div>
                         <div class="form-group">
                             <textarea class="form-control form-control-lg" name="message" placeholder="Tell us a few words ..." rows="3" required></textarea>
                         </div>

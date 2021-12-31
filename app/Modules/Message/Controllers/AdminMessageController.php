@@ -42,7 +42,7 @@ class AdminMessageController extends Controller
                     $query->orWhere($val[0],$val[1],$val[2]);
                 }
             }
-        } )->get();
+        } )->orderBy('id', 'DESC')->get();
 
         // Display limited list
         $rows = $message->where( function($query) use ($where) {
@@ -51,7 +51,7 @@ class AdminMessageController extends Controller
                     $query->orWhere($val[0],$val[1],$val[2]);
                 }
             }
-        })->limit($request->length)->offset($request->start)->get();
+        })->limit($request->length)->offset($request->start)->orderBy('id', 'DESC')->get();
 
         //To count the total values present
         $total = $message->get();
@@ -137,6 +137,8 @@ class AdminMessageController extends Controller
     public function edit($id)
     {
         $message = Message::findOrFail($id);
+        $data['status'] = 1;
+        $message->update($data);
         $page['title'] = 'Message | Update';
         return view("Message::edit",compact('page','message'));
 
@@ -169,6 +171,34 @@ class AdminMessageController extends Controller
     {
         $success = Message::where('id', $id)->delete();
         return redirect()->route('admin.messages');
+
+        //
+    }
+
+    public function toggle($id)
+    {
+        $message = Message::findOrFail($id);
+        if($message->status == 1){
+            $data['status'] = 0;
+        }else{
+            $data['status'] = 1;
+        }
+        $message->update($data);
+        return redirect()->back();
+
+        //
+    }
+
+    public function reply(Request $request, $id)
+    {
+        $message = Message::findOrFail($id);
+        $data = [
+            'reply' => $request->reply,
+            'subject' => $message->subject,
+            'to' => $message->email,
+        ];
+        dd($data);
+        return redirect()->back();
 
         //
     }

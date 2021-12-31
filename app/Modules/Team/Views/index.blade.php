@@ -28,11 +28,11 @@
                     <thead>
                         <tr>
                             <th>SN</th>
-							<th >Image</th>
+{{--							<th >Image</th>--}}
 <th >Designation</th>
 <th >Name</th>
-<th >Description</th>
-<th >Link</th>
+{{--<th >Description</th>--}}
+{{--<th >Link</th>--}}
 {{--<th >Deleted_at</th>--}}
 {{--<th >Created_at</th>--}}
 {{--<th >Updated_at</th>--}}
@@ -68,7 +68,9 @@
                 { data: function (data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },name: "sn", searchable: false },
-                { data: "image",name: "image"},{ data: "designation",name: "designation"},{ data: "name",name: "name"},{ data: "description",name: "description"},{ data: "link",name: "link"},
+                // { data: "image",name: "image"},
+                { data: "designation",name: "designation"},{ data: "name",name: "name"},
+                // { data: "description",name: "description"},{ data: "link",name: "link"},
                 // { data: "deleted_at",name: "deleted_at"},{ data: "created_at",name: "created_at"},{ data: "updated_at",name: "updated_at"},
 
                 { data: function(data,b,c,table) {

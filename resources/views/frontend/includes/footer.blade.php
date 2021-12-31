@@ -46,6 +46,7 @@
                         <li><a href="{{route('frontend.home')}}">Home</a></li>
                         <li><a href="{{route('about')}}">About</a></li>
                         <li><a href="{{route('booking')}}">Book Staff</a></li>
+                        <li><a href="{{route('job')}}">Career</a></li>
                         <li><a href="{{route('contact')}}">Contact</a></li>
                     </ul>
                 </div>

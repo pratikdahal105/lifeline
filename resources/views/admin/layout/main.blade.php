@@ -163,7 +163,7 @@
         <script src="{{ asset('admin_assets') }}/js/Plugin/bootstrap-datepicker.js"></script>
         <script src="{{ asset('admin_assets') }}/js/jquery.ajaxuploader.js"></script>
 
-        <script src="//cdn.ckeditor.com/4.13.1/full/ckeditor.js"></script>
+        <!--<script src="//cdn.ckeditor.com/4.13.1/full/ckeditor.js"></script>-->
 </body>
 
 </html>

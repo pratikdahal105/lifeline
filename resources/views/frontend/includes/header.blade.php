@@ -34,6 +34,9 @@
                     <a class="nav-link" href="{{route('booking')}}">Book Staff</a>
                 </li>
                 <li class="nav-item ">
+                    <a class="nav-link" href="{{route('job')}}">Career</a>
+                </li>
+                <li class="nav-item ">
                     <a class="nav-link" href="{{route('contact')}}">Contact</a>
                 </li>
             </ul>

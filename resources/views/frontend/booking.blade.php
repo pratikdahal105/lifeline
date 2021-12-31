@@ -77,7 +77,7 @@
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
                     <label class="form-check-label" for="exampleCheck1">By boking the service you agree to the Lifeline Recruitment booking
-                        <a href="#">Terms and Condition</a>.</label>
+                        <a href="{{route('terms')}}">Terms and Condition</a>.</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

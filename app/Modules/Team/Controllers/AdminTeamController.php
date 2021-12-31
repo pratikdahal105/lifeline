@@ -5,6 +5,7 @@ namespace App\Modules\Team\Controllers;
 use App\Http\Controllers\Controller;
 use Auth;
 use DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Schema;
@@ -112,6 +113,11 @@ class AdminTeamController extends Controller
     public function store(Request $request)
     {
         $data = $request->except('_token');
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $uploadPath = public_path('uploads/team/');
+            $data['image'] = $this->fileUpload($file, $uploadPath);
+        }
         $success = Team::Create($data);
         return redirect()->route('admin.teams');
         //
@@ -152,8 +158,15 @@ class AdminTeamController extends Controller
      */
     public function update(Request $request)
     {
+        $team = Team::where('id', $request->id)->first();
         $data = $request->except('_token', '_method');
-        $success = Team::where('id', $request->id)->update($data);
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $uploadPath = public_path('uploads/team/');
+            File::delete($uploadPath.$team->image);
+            $data['image'] = $this->fileUpload($file, $uploadPath);
+        }
+        $success = $team->update($data);
         return redirect()->route('admin.teams');
 
         //
@@ -171,5 +184,14 @@ class AdminTeamController extends Controller
         return redirect()->route('admin.teams');
 
         //
+    }
+
+    public function fileUpload($file, $path){
+        $ext = $file->getClientOriginalExtension();
+        $imageName = md5(microtime()) . '.' . $ext;
+        if (!$file->move($path, $imageName)) {
+            return redirect()->back();
+        }
+        return $imageName;
     }
 }

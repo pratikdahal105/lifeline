@@ -21,7 +21,9 @@ Route::group(['name' => 'Home'], function (){
     Route::get('About', 'FrontController@about')->name('about');
     Route::any('contactUs', 'FrontController@contact')->name('contact');
     Route::any('bookStaff', 'FrontController@booking')->name('booking');
-    Route::any('privacyPolicy', 'FrontController@privacy')->name('privacy');
-    Route::any('termsAndConditions', 'FrontController@terms')->name('terms');
+    Route::get('privacyPolicy', 'FrontController@privacy')->name('privacy');
+    Route::get('termsAndConditions', 'FrontController@terms')->name('terms');
+    Route::get('careerOpportunities', 'FrontController@job')->name('job');
+    Route::any('apply/{slug}', 'FrontController@jobApplication')->name('job.apply');
 
 });

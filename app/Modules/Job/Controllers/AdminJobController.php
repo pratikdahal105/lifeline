@@ -4,6 +4,7 @@ namespace App\Modules\Job\Controllers;
 
 use App\Http\Controllers\Controller;
 use Auth;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -112,6 +113,7 @@ class AdminJobController extends Controller
     public function store(Request $request)
     {
         $data = $request->except('_token');
+        $data['slug'] = SlugService::createSlug(Job::class, 'slug', $data['position']);
         $success = Job::Create($data);
         return redirect()->route('admin.jobs');
         //

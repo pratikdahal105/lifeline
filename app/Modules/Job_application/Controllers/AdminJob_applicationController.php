@@ -3,6 +3,7 @@
 namespace App\Modules\Job_application\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Modules\Job\Model\Job;
 use Auth;
 use DB;
 use Illuminate\Http\Request;
@@ -42,7 +43,7 @@ class AdminJob_applicationController extends Controller
                     $query->orWhere($val[0],$val[1],$val[2]);
                 }
             }
-        } )->get();
+        } )->orderBy('id', 'DESC')->get();
 
         // Display limited list
         $rows = $job_application->where( function($query) use ($where) {
@@ -51,7 +52,7 @@ class AdminJob_applicationController extends Controller
                     $query->orWhere($val[0],$val[1],$val[2]);
                 }
             }
-        })->limit($request->length)->offset($request->start)->get();
+        })->limit($request->length)->offset($request->start)->orderBy('id', 'DESC')->get();
 
         //To count the total values present
         $total = $job_application->get();
@@ -99,7 +100,8 @@ class AdminJob_applicationController extends Controller
     public function create()
     {
         $page['title'] = 'Job_application | Create';
-        return view("Job_application::add",compact('page'));
+        $jobs = Job::where('status', 1)->get();
+        return view("Job_application::add",compact('page', 'jobs'));
         //
     }
 
@@ -112,6 +114,11 @@ class AdminJob_applicationController extends Controller
     public function store(Request $request)
     {
         $data = $request->except('_token');
+        if ($request->hasFile('cv')) {
+            $file = $request->file('cv');
+            $uploadPath = public_path('uploads/resume/');
+            $data['cv'] = $this->fileUpload($file, $uploadPath);
+        }
         $success = Job_application::Create($data);
         return redirect()->route('admin.job_applications');
         //
@@ -171,5 +178,14 @@ class AdminJob_applicationController extends Controller
         return redirect()->route('admin.job_applications');
 
         //
+    }
+
+    public function fileUpload($file, $path){
+        $ext = $file->getClientOriginalExtension();
+        $imageName = md5(microtime()) . '.' . $ext;
+        if (!$file->move($path, $imageName)) {
+            return redirect()->back();
+        }
+        return $imageName;
     }
 }
