@@ -3,10 +3,17 @@
 
     <section class="slice slice-lg">
         <div class="container">
+            <div class="text-center text-md-left mt-5" id="bookButton">
+                <a href="#" class="btn btn-primary btn-icon">
+                    <span class="btn-inner--text">Book Staff</span>
+                    <span class="btn-inner--icon"><i data-feather="chevron-right"></i></span>
+                </a>
+                {{--                        <a href="https://webpixels.io/illustrations" class="btn btn-neutral btn-icon d-none d-lg-inline-block" target="_blank">See Illustrations</a>--}}
+            </div>
             @include('frontend.includes.message')
-            <h2>Book Staff</h2>
-            <h2><small>Personal Detail</small></h2>
-            <form action="{{route('booking')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('booking')}}" method="post" enctype="multipart/form-data" id="booking_form">
+                <h2>Book Staff</h2>
+                <h2><small>Personal Detail</small></h2>
                 @csrf
                 <div class="form-row">
                     <div class="form-group col-md-12">
@@ -85,6 +92,11 @@
     </section>
 
     <script>
+        $('#booking_form').hide();
+        $("#bookButton").click(function(){
+            $('#booking_form').show();
+            $('#bookButton').hide();
+        });
         function addNewDate() {
             $('#furtherDetails').append('<div class="form-row"><div class="form-group col-md-3"> <label for="">Choose Required Staff</label> <select id="staff" name="staff[]" class="form-control" required> <option value="" disabled selected>-- Select Staff --</option> @foreach($staffs as $staff) <option value="{{$staff->id}}">{{$staff->type}}</option>  @endforeach </select> </div> <div class="form-group col-md-3"> <label for="">Choose Date</label> <input type="date" class="form-control" name="date[]" id="date" placeholder="Choose Date" required> </div> <div class="form-group col-md-3"> <label for="">Time From</label> <input type="time" class="form-control" name="from[]" id="email" placeholder="Time From" required> </div> <div class="form-group col-md-3"> <label for="">Time To</label> <input type="time" class="form-control" name="to[]" id="contact" placeholder="Time To" required> <small id="passwordHelpInline" class="text-muted"></small> <a onclick="removeMe(this)" style="float: right; color: red;">Remove Date!</a> </div>  </div>');
         }

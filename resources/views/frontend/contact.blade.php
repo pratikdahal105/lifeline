@@ -16,6 +16,8 @@
                     <p class="lead text-white text-center text-lg-left opacity-8">
                         Feel free to contact us.
                     </p>
+                    <h4 class="lead text-white text-center text-lg-left opacity-8">Phone: 07450 003714</h4>
+                    <h4 class="lead text-white text-center text-lg-left opacity-8">Email: info@lifelinerecruitment.com</h4>
                     <!-- Buttons -->
                     <div class="mt-5 text-center text-lg-left">
                         <a href="#sct-form-contact" data-scroll-to class="btn btn-white btn-lg btn-icon">

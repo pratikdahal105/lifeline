@@ -17,28 +17,28 @@
                     <!-- Webpixels' mission -->
                     <p class="mt-4 text-sm opacity-8 pr-lg-4">Brief intro.</p>
                     <!-- Social -->
-                    <ul class="nav mt-4">
-                        <li class="nav-item">
-                            <a class="nav-link pl-0" href="https://dribbble.com/webpixels" target="_blank">
-                                <i class="fab fa-dribbble"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/webpixels" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.instagram.com/webpxs" target="_blank">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.facebook.com/webpixels" target="_blank">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                        </li>
-                    </ul>
+{{--                    <ul class="nav mt-4">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link pl-0" href="https://dribbble.com/webpixels" target="_blank">--}}
+{{--                                <i class="fab fa-dribbble"></i>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="https://github.com/webpixels" target="_blank">--}}
+{{--                                <i class="fab fa-github"></i>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="https://www.instagram.com/webpxs" target="_blank">--}}
+{{--                                <i class="fab fa-instagram"></i>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="https://www.facebook.com/webpixels" target="_blank">--}}
+{{--                                <i class="fab fa-facebook"></i>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
                 </div>
                 <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
                     <h6 class="heading mb-3">Links</h6>

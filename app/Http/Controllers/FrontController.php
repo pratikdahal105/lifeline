@@ -31,8 +31,8 @@ class FrontController extends Controller
     public function index()
     {
         $page['title'] = 'Lifeline | Home';
-
-        return view('frontend.home')->with(compact('page'));
+        $staffs = Staff::all();
+        return view('frontend.home')->with(compact('page', 'staffs'));
     }
 
     public function about()

@@ -4,7 +4,7 @@
     <div class="container">
         <!-- Brand -->
         <a class="navbar-brand" href="{{route('frontend.home')}}" style="height: 100px; width: 100px;">
-            <img alt="Image placeholder" src="{{asset('uploads/site_logo.svg')}}" id="navbar-logo" style="height: 80px; width: 80px;">
+            <img alt="Image placeholder" src="{{asset('uploads/site_logo.svg')}}" id="navbar-logo" style="height: 100%; width: 100%;">
         </a>
 
         <!-- Toggler -->

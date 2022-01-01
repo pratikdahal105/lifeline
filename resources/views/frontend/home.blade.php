@@ -104,66 +104,68 @@
                             Whether it’s a RESTAURANT, HOTEL, PUB, EVENTS/CATERING/FUNCTION
                         </p>
                         <ul class="list-unstyled mb-0">
-                            <li class="py-2">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <div class="icon icon-shape bg-primary text-white icon-sm rounded-circle mr-3">
-                                            <i class="fa fa-check"></i>
+                            @foreach($staffs as $staff)
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div class="icon icon-shape bg-primary text-white icon-sm rounded-circle mr-3">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="h6 mb-0">{{$staff->type}}</span>
                                         </div>
                                     </div>
-                                    <div>
-                                        <span class="h6 mb-0">Chef – Head</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="py-2">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <div class="icon icon-shape bg-primary text-white icon-sm rounded-circle mr-3">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="h6 mb-0">Chef - Sous</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="py-2">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <div class="icon icon-shape bg-primary text-white icon-sm rounded-circle mr-3">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="h6 mb-0">Chef – Commis</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="py-2">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <div class="icon icon-shape bg-primary text-white icon-sm rounded-circle mr-3">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="h6 mb-0">Chef - Demi</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="py-2">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <div class="icon icon-shape bg-primary text-white icon-sm rounded-circle mr-3">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="h6 mb-0">Kitchen Helper</span>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
+{{--                            <li class="py-2">--}}
+{{--                                <div class="d-flex align-items-center">--}}
+{{--                                    <div>--}}
+{{--                                        <div class="icon icon-shape bg-primary text-white icon-sm rounded-circle mr-3">--}}
+{{--                                            <i class="fa fa-check"></i>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div>--}}
+{{--                                        <span class="h6 mb-0">Chef - Sous</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="py-2">--}}
+{{--                                <div class="d-flex align-items-center">--}}
+{{--                                    <div>--}}
+{{--                                        <div class="icon icon-shape bg-primary text-white icon-sm rounded-circle mr-3">--}}
+{{--                                            <i class="fa fa-check"></i>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div>--}}
+{{--                                        <span class="h6 mb-0">Chef – Commis</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="py-2">--}}
+{{--                                <div class="d-flex align-items-center">--}}
+{{--                                    <div>--}}
+{{--                                        <div class="icon icon-shape bg-primary text-white icon-sm rounded-circle mr-3">--}}
+{{--                                            <i class="fa fa-check"></i>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div>--}}
+{{--                                        <span class="h6 mb-0">Chef - Demi</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="py-2">--}}
+{{--                                <div class="d-flex align-items-center">--}}
+{{--                                    <div>--}}
+{{--                                        <div class="icon icon-shape bg-primary text-white icon-sm rounded-circle mr-3">--}}
+{{--                                            <i class="fa fa-check"></i>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div>--}}
+{{--                                        <span class="h6 mb-0">Kitchen Helper</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
                     <div class="col-lg-6 order-lg-1">
