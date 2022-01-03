@@ -129,9 +129,12 @@ class FrontController extends Controller
         if($request->isMethod('get')){
             $job = Job::where('slug',$slug)->first();
             $page['title'] = 'Lifeline | Job Application';
-            return view('frontend.jobApplication')->with(compact('page', 'job'));
+            return view('frontend.apply_job')->with(compact('page', 'job'));
         }
         if($request->isMethod('post')){
+            $request->validate([
+                'cv' => 'required|mimes:pdf,docx,jpeg,png,jpg|size:10000'
+            ]);
             $application = new Job_application();
             $job = Job::where('slug', $slug)->first();
             $data = [
