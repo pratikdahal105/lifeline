@@ -133,7 +133,7 @@ class FrontController extends Controller
         }
         if($request->isMethod('post')){
             $request->validate([
-                'cv' => 'required|mimes:pdf,docx,jpeg,png,jpg|size:10000'
+                'cv' => 'required|mimes:pdf,docx,jpeg,png,jpg'
             ]);
             $application = new Job_application();
             $job = Job::where('slug', $slug)->first();

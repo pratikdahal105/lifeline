@@ -51,7 +51,7 @@
                                         </tr>
                                         <tr>
                                             <td>Job</td>
-                                            <td>{{$job_application->job_id}}</td>
+                                            <td>{{$job_application->job->position}}</td>
                                         </tr>
                                         <tr>
                                             <td>Available Per Week</td>

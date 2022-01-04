@@ -143,7 +143,7 @@ class AdminJob_applicationController extends Controller
      */
     public function edit($id)
     {
-        $job_application = Job_application::findOrFail($id);
+        $job_application = Job_application::where('id',$id)->with('job')->first();
         $page['title'] = 'Job_application | Update';
         return view("Job_application::edit",compact('page','job_application'));
 
