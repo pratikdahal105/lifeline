@@ -43,7 +43,7 @@ class FrontController extends Controller
         return view('frontend.about')->with(compact('page', 'about', 'teams'));
     }
 
-    public function booking(\Illuminate\Http\Request $request)
+    public function booking(Request $request)
     {
         if($request->isMethod('get')){
             $page['title'] = 'Lifeline | Book Staff';

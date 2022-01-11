@@ -16,3 +16,15 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::group(['name' => 'Home'], function (){
+    Route::get('/', 'FrontApiController@index');
+    Route::get('About', 'FrontApiController@about');
+    Route::any('contactUs', 'FrontApiController@contact');
+    Route::any('bookStaff', 'FrontApiController@booking');
+    Route::get('privacyPolicy', 'FrontApiController@privacy');
+    Route::get('termsAndConditions', 'FrontApiController@terms');
+    Route::get('careerOpportunities', 'FrontApiController@job');
+    Route::any('apply/{slug}', 'FrontApiController@jobApplication');
+});
