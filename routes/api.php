@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['name' => 'Home'], function (){
     Route::get('/', 'FrontApiController@index');
     Route::get('About', 'FrontApiController@about');
-    Route::any('contactUs', 'FrontApiController@contact');
+    Route::post('contactUs', 'FrontApiController@contact');
     Route::any('bookStaff', 'FrontApiController@booking');
     Route::get('privacyPolicy', 'FrontApiController@privacy');
     Route::get('termsAndConditions', 'FrontApiController@terms');

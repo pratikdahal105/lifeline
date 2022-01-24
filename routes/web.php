@@ -13,11 +13,11 @@
 
 Auth::routes();
 Route::group(['name' => 'Admin' ,'middleware' => ['web', 'auth']], function () {
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('home');
 });
 
 Route::group(['name' => 'Home'], function (){
-    Route::get('/', 'FrontController@index')->name('frontend.home');
+    Route::get('/home', 'FrontController@index')->name('frontend.home');
     Route::get('About', 'FrontController@about')->name('about');
     Route::any('contactUs', 'FrontController@contact')->name('contact');
     Route::any('bookStaff', 'FrontController@booking')->name('booking');
