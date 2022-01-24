@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-    /**
+    /** test
      * Create a new controller instance.
      *
      * @return void
